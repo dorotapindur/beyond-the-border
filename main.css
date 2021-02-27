@@ -1,3 +1,21 @@
+@import "./normalize.css";
+
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    background: #cfcfcf;
+    padding: 10px;
+}
 label {
     display: block;
+    margin: 10px;
+}
+button {
+    margin: 10px;
 }

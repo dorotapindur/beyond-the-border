@@ -13,13 +13,39 @@
         <h1 class="main-header">Beyond the Border</h1>
         <p>gradient-border generator</p>
         <section class="section section--inputs">
-            <h2>Describe your element</h2>
-            <label>current width of your element: <input type="number" /> px</label>
-            <label>border-radius of your current element: <input type="number" />px</label>
-            <label>border-to-be width: <input type="number" />px</label>
+            <h2>Describe your element:</h2>
+            <form>
+                <label>current width of your element: <input type="number" /> px</label>
+                <label>border-radius: <input type="number" /> px</label>
+                <label>border width: <input type="number" /> px</label>
+                <label>choose first color: <input type="color" value="#000000" /></label>
+                <label>choose second color: <input type="color" value="#ffffff" /></label>
+                <p>choose gradient type: </p>
+                <label><input type="radio" name="gradient-type"/> linear</label>
+                <label>choose angle: <input type="number" /> deg</label>
+                <label><input type="radio" name="gradient-type"/> radial</label>
+                <div>
+                    <p>choose shape:</p>
+                    <label><input type="radio" name="radial-type"/> circle</label>
+                    <label><input type="radio" name="radial-type"/> ellipse</label>
+                    <p>choose beginning:</p>
+                    <div>
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="top left" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="top" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="top right" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="center left" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="center" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="center right" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="bottom left" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="bottom" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="bottom right" /> 
+                    </div>
+                </div>
+                <button type="submit">See CSS code</button>
+            </form>
         </section>
         <section class="section section--output">
-            <h2>Output code</h2>
+            <h2>Output CSS code:</h2>
             <p class="output-code output--js">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, praesentium!</p>
             <button>Copy to clipboard</button>
         </section>
