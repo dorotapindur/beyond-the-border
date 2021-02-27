@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond the Border</title>
     <meta name="description" content="CSS gradient and transparent border generator">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <main>
@@ -23,18 +23,22 @@
                 <p>choose gradient type: </p>
                 <label><input type="radio" name="gradient-type"/> linear</label>
                 <label>choose angle: <input type="number" /> deg</label>
+                <div class="angle-handle">
+                    <p class="angle-handle__text">30&deg;</p>
+                    <div class="angle-handle__indicator"></div>
+                </div>
                 <label><input type="radio" name="gradient-type"/> radial</label>
                 <div>
                     <p>choose shape:</p>
                     <label><input type="radio" name="radial-type"/> circle</label>
                     <label><input type="radio" name="radial-type"/> ellipse</label>
                     <p>choose beginning:</p>
-                    <div>
+                    <div class="beginning-container">
                         <input id="choose-beginning" type="radio" name="choose-beginning" value="top left" />
                         <input id="choose-beginning" type="radio" name="choose-beginning" value="top" />
                         <input id="choose-beginning" type="radio" name="choose-beginning" value="top right" />
                         <input id="choose-beginning" type="radio" name="choose-beginning" value="center left" />
-                        <input id="choose-beginning" type="radio" name="choose-beginning" value="center" />
+                        <input id="choose-beginning" type="radio" name="choose-beginning" value="center" checked />
                         <input id="choose-beginning" type="radio" name="choose-beginning" value="center right" />
                         <input id="choose-beginning" type="radio" name="choose-beginning" value="bottom left" />
                         <input id="choose-beginning" type="radio" name="choose-beginning" value="bottom" />

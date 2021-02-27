@@ -1,0 +1,70 @@
+@import url(./normalize.css);
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  background: #cfcfcf;
+  padding: 10px; }
+
+section {
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 10px 0; }
+
+label {
+  display: block;
+  margin: 10px; }
+
+input {
+  border-radius: 5px; }
+
+button {
+  margin: 10px; }
+
+.beginning-container {
+  background: #414141;
+  width: 90px;
+  height: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  place-items: center;
+  padding: 5px;
+  border-radius: 10px; }
+
+.angle-handle {
+  box-sizing: content-box;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px black solid;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  .angle-handle__text {
+    position: absolute;
+    display: block;
+    width: max-content;
+    background: pink;
+    margin: 0; }
+  .angle-handle__indicator {
+    width: 80px;
+    height: 10px;
+    transform: rotate(30deg);
+    background: none;
+    position: relative; }
+    .angle-handle__indicator::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: black;
+      z-index: 2; }
