@@ -1,4 +1,4 @@
-@import url(./normalize.css);
+@import url(../css/normalize.css);
 html {
   box-sizing: border-box; }
 
@@ -10,7 +10,7 @@ body {
   padding: 10px; }
 
 section {
-  border: 1px solid grey;
+  border: 1px solid #808080;
   padding: 10px;
   margin: 10px 0; }
 
@@ -40,7 +40,7 @@ button {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 5px black solid;
+  border: 5px solid #414141;
   background: white;
   display: flex;
   align-items: center;
@@ -66,5 +66,5 @@ button {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: black;
+      background: #414141;
       z-index: 2; }

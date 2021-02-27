@@ -1,4 +1,5 @@
-@import "./normalize.css";
+@import "../css/normalize.css";
+@import "./variables";
 
 html {
     box-sizing: border-box;
@@ -9,11 +10,11 @@ html {
 }
   
 body {
-    background: #cfcfcf;
+    background: $main-background;
     padding: 10px;
 }
 section {
-    border: 1px solid grey;
+    border: 1px solid $border;
     padding: 10px;
     margin: 10px 0;
 }
@@ -29,7 +30,7 @@ button {
 }
 
 .beginning-container{
-    background: #414141;
+    background: $dark;
     width: 90px;
     height: 90px;
     display: grid;
@@ -44,7 +45,7 @@ button {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 5px black solid;
+    border: 5px solid $dark;
     background: white;
     display: flex;
     align-items: center;
@@ -71,7 +72,7 @@ button {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: black;
+            background: $dark;
             z-index: 2;
         }
     }
