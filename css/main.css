@@ -22,9 +22,10 @@ input {
   border-radius: 5px; }
 
 button {
-  margin: 10px; }
+  margin: 10px;
+  border-radius: 5px; }
 
-.beginning-container {
+.beginning__radio-container {
   background: #414141;
   width: 90px;
   height: 90px;
@@ -55,7 +56,6 @@ button {
   .angle-handle__indicator {
     width: 80px;
     height: 10px;
-    transform: rotate(30deg);
     background: none;
     position: relative; }
     .angle-handle__indicator::after {

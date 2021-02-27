@@ -27,9 +27,11 @@ input {
 }
 button {
     margin: 10px;
+    border-radius: 5px;
 }
 
-.beginning-container{
+.beginning {
+    &__radio-container {
     background: $dark;
     width: 90px;
     height: 90px;
@@ -39,6 +41,7 @@ button {
     place-items: center;
     padding: 5px;
     border-radius: 10px;
+    }
 }
 .angle-handle {
     box-sizing: content-box;
@@ -61,7 +64,6 @@ button {
     &__indicator {
         width: 80px;
         height: 10px;
-        transform: rotate(30deg);
         background: none;
         position: relative;
         &::after {
