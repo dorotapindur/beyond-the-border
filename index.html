@@ -20,31 +20,38 @@
                 <label>border width: <input type="number" /> px</label>
                 <label>choose first color: <input type="color" value="#000000" /></label>
                 <label>choose second color: <input type="color" value="#ffffff" /></label>
+
                 <p>choose gradient type: </p>
-                <label><input type="radio" name="gradient-type"/> linear</label>
-                <label>choose angle: <input class="choose-angle--js" type="number" value="0" /> deg</label>
-                <div class="angle-handle">
-                    <p class="angle-handle__text"></p>
-                    <div class="angle-handle__indicator"></div>
-                </div>
-                <label><input type="radio" name="gradient-type"/> radial</label>
-                <div class="beginning">
-                    <p class="beginning__text">choose shape:</p>
-                    <label class="beginning__label"><input class="beginning__radialtypeinput" type="radio" name="radial-type"/> circle</label>
-                    <label><input class="beginning__radialtypeinput" type="radio" name="radial-type"/> ellipse</label>
-                    <p>choose beginning:</p>
-                    <div class="beginning__radio-container radio-container--js">
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="top left" />
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="top" />
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="top right" />
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="center left" />
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="center" checked />
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="center right" />
-                        <input class="beginning__input" class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="bottom left" />
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="bottom" />
-                        <input class="beginning__input" id="choose-beginning" type="radio" name="choose-beginning" value="bottom right" /> 
+                <label><input class="type-linear--js" type="radio" name="gradient-type"/> linear</label>
+                <div class="linear">
+                    <label class="linear__label">choose angle: <input class="linear__input choose-angle--js" type="number" value="0" /> deg</label>
+                    <div class="angle-handle">
+                        <p class="angle-handle__text"></p>
+                        <div class="angle-handle__indicator"></div>
                     </div>
-                    <p class="beginning__value beginning__value--js">value</p>
+                </div>
+                <label><input class="type-radial--js" type="radio" name="gradient-type"/> radial</label>
+                <div class="radial">
+                    <div class="radial__shape">
+                        <p class="radial__text">choose shape:</p>
+                        <label class="radial__label"><input class="radial__radialtypeinput" type="radio" name="radial-type"/> circle</label>
+                        <label><input class="radial__radialtypeinput" type="radio" name="radial-type"/> ellipse</label>
+                    </div>
+                    <div class="radial__beginning">
+                        <p class="radial__text">choose beginning:</p>
+                        <div class="radial__radio-container radio-container--js">
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="top left" />
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="top" />
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="top right" />
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="center left" />
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="center" checked />
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="center right" />
+                            <input class="radial__input" class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="bottom left" />
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="bottom" />
+                            <input class="radial__input" id="choose-radial" type="radio" name="choose-radial" value="bottom right" /> 
+                        </div>
+                        <p class="radial__value radial__value--js">value</p>
+                    </div>
                 </div>
                 <button type="submit">See CSS code</button>
             </form>

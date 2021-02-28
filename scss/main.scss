@@ -24,23 +24,17 @@ label {
 }
 input {
     border-radius: 5px;
+    cursor: pointer;
 }
 button {
     margin: 10px;
     border-radius: 5px;
 }
-
-.beginning {
-    &__radio-container {
-    background: $dark;
-    width: 90px;
-    height: 90px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    place-items: center;
-    padding: 5px;
-    border-radius: 10px;
+.linear {
+    display: flex;
+    width: 100%;
+    &__label {
+        margin-right: 20px;
     }
 }
 .angle-handle {
@@ -58,7 +52,6 @@ button {
         position: absolute;
         display: block;
         width: max-content;
-        background: pink;
         margin: 0;
     }
     &__indicator {
@@ -79,3 +72,30 @@ button {
         }
     }
 }
+.radial {
+    display: flex;
+    flex-flow: row wrap;
+    &__shape {
+        margin-right: 50px;
+    }
+    &__beginning {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    &__radio-container {
+    background: $dark;
+    width: 90px;
+    height: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    }
+    &__value {
+        margin: 0;
+    }
+}
+

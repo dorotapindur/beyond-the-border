@@ -19,22 +19,18 @@ label {
   margin: 10px; }
 
 input {
-  border-radius: 5px; }
+  border-radius: 5px;
+  cursor: pointer; }
 
 button {
   margin: 10px;
   border-radius: 5px; }
 
-.beginning__radio-container {
-  background: #414141;
-  width: 90px;
-  height: 90px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  place-items: center;
-  padding: 5px;
-  border-radius: 10px; }
+.linear {
+  display: flex;
+  width: 100%; }
+  .linear__label {
+    margin-right: 20px; }
 
 .angle-handle {
   box-sizing: content-box;
@@ -51,7 +47,6 @@ button {
     position: absolute;
     display: block;
     width: max-content;
-    background: pink;
     margin: 0; }
   .angle-handle__indicator {
     width: 80px;
@@ -68,3 +63,25 @@ button {
       border-radius: 50%;
       background: #414141;
       z-index: 2; }
+
+.radial {
+  display: flex;
+  flex-flow: row wrap; }
+  .radial__shape {
+    margin-right: 50px; }
+  .radial__beginning {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+  .radial__radio-container {
+    background: #414141;
+    width: 90px;
+    height: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 5px;
+    border-radius: 10px; }
+  .radial__value {
+    margin: 0; }
