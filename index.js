@@ -1,3 +1,21 @@
+import { width, getWidth } from './js_modules/getWidth.js';
+
+const outputCode = document.getElementById('output-code');
+
+
+const borderRadius = document.querySelector('.radius');
+const borderWidth = document.querySelector('.border-width');
+const firstColor = document.querySelector('.first-color');
+const secondColor = document.querySelector('.second-color');
+
+
+getWidth();
+
+const seeCode = document.getElementById('see-code');
+seeCode.addEventListener('click', (event) => {
+    event.preventDefault();
+    outputCode.innerHTML = `My width is ${width}`;
+})
 
 
 //choose linear/radial - options appearing
