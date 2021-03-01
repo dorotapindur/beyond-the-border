@@ -15,15 +15,15 @@
         <section class="section section--inputs">
             <h2>Describe your element:</h2>
             <form>
-                <label>width of your element: <input type="number" /> px</label>
-                <label>border-radius: <input type="number" /> px</label>
-                <label>border width: <input type="number" /> px</label>
-                <label>choose first color: <input type="color" value="#000000" /></label>
-                <label>choose second color: <input type="color" value="#ffffff" /></label>
+                <label>width of your element: <input class="width" type="number" /> px</label>
+                <label>border-radius: <input class="radius" type="number" /> px</label>
+                <label>border width: <input class="border-width" type="number" /> px</label>
+                <label>choose first color: <input class="first-color" type="color" value="#000000" /></label>
+                <label>choose second color: <input class="second-color" type="color" value="#ffffff" /></label>
 
                 <p>choose gradient type: </p>
-                <label><input class="type-linear--js" type="radio" name="gradient-type"/> linear</label>
-                <div class="linear">
+                <label><input class="type-linear--js" type="radio" name="gradient-type" /> linear</label>
+                <div class="linear invisible">
                     <label class="linear__label">choose angle: <input class="linear__input choose-angle--js" type="number" value="0" /> deg</label>
                     <div class="angle-handle">
                         <p class="angle-handle__text"></p>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <label><input class="type-radial--js" type="radio" name="gradient-type"/> radial</label>
-                <div class="radial">
+                <div class="radial invisible">
                     <div class="radial__shape">
                         <p class="radial__text">choose shape:</p>
                         <label class="radial__label"><input class="radial__radialtypeinput" type="radio" name="radial-type"/> circle</label>
@@ -53,8 +53,10 @@
                         <p class="radial__value radial__value--js">value</p>
                     </div>
                 </div>
-                <button type="submit">See CSS code</button>
+                <div id="output-shape" class="output-shape"></div>
+                <button type="submit" >See CSS code</button>
             </form>
+            
         </section>
         <section class="section section--output">
             <h2>Output CSS code:</h2>

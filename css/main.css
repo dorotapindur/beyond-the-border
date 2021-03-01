@@ -85,3 +85,11 @@ button {
     border-radius: 10px; }
   .radial__value {
     margin: 0; }
+
+.output-shape {
+  background: black;
+  width: 100px;
+  height: 100px; }
+
+.invisible {
+  display: none; }
