@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/dorotapindur/beyond-the-border#readme",
   "devDependencies": {
-    "sass": "^1.32.8"
+    "node-sass": "^5.0.0"
   }
 }
