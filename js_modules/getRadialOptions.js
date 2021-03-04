@@ -1,4 +1,3 @@
-
 let circle = true;
 let ellipse = false;
 
@@ -25,7 +24,7 @@ function getRadialShape() {
     });
 }
 
-let radialBeginning;
+let radialBeginning = 'center';
 
 function getBeginningValue() {
     const inputList = document.querySelectorAll('.radial__input');
