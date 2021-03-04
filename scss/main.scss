@@ -99,9 +99,12 @@ button {
     }
 }
 .output-shape {
+    box-sizing: content-box;
     background: black;
     width: 100px;
     height: 100px;
+    border-color: green;
+    border-style: solid;
 }
 .invisible {
     display: none;
