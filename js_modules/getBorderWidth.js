@@ -6,7 +6,6 @@ function getBorderWidth() {
     borderWidth.addEventListener('input', (event) => {
         userBorderWidth = event.target.value;
         outputShape.style.borderWidth = `${userBorderWidth}px`;
-        console.log(userBorderWidth);
     })
 }
 
