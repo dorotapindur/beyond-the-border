@@ -3,23 +3,18 @@ import { outputShape } from '../index.js';
 let userBorderRadius = 0;
 let borderRadiusUnit = 'px';
 
-function getRadiusUnit() {
-    const inputList = document.querySelectorAll('.radius-unit');
-    for (let i = 0; i< inputList.length; i++) {
-        inputList[i].addEventListener('input', () => {
-            borderRadiusUnit = inputList[i].value;
-            outputShape.style.borderRadius = `${userBorderRadius}${borderRadiusUnit}`;
-        });
-    }
-};
 function getBorderRadius() {
-    const borderRadius = document.querySelector('.radius');
-    borderRadius.addEventListener('input', (event) => {
-        getRadiusUnit()
-        userBorderRadius = event.target.value;
-        outputShape.style.borderRadius = `${userBorderRadius}${borderRadiusUnit}`;
-    })
-}
+    const input = document.querySelector('.radius');
+    const radioButtons = Array.from(document.querySelectorAll('.radius-unit'));
 
+    const setBorderRadius = () => {
+    borderRadiusUnit = radioButtons.find((radio) => radio.checked).value;
+    userBorderRadius = input.value;
+    outputShape.style.borderRadius = `${userBorderRadius}${borderRadiusUnit}`;
+    };
+
+    input.addEventListener('input', setBorderRadius);
+    radioButtons.forEach((radio) => radio.addEventListener('change', setBorderRadius));
+}
 
 export { userBorderRadius, borderRadiusUnit, getBorderRadius };
