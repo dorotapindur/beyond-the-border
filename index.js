@@ -3,19 +3,16 @@ import { angle, getAngle } from './js_modules/getAngle.js';
 import { circle, ellipse, radialBeginning, getRadialShape, getBeginningValue } from './js_modules/getRadialOptions.js';
 import { userBorderWidth, getBorderWidth } from './js_modules/getBorderWidth.js';
 import { userBorderRadius, getBorderRadius } from './js_modules/getBorderRadius.js';
+import { firstColor, secondColor, getColors } from './js_modules/getColors.js';
 const outputCode = document.getElementById('output-code');
 const outputShape = document.getElementById('output-shape');
 
 export {outputShape};
 
-const borderRadius = document.querySelector('.radius');
-const firstColor = document.querySelector('.first-color');
-const secondColor = document.querySelector('.second-color');
-
-
 getWidth();
 getBorderWidth();
 getBorderRadius();
+getColors();
 
 //choose linear/radial - options appearing
 const linearType = document.querySelector('.type-linear--js');
@@ -42,7 +39,7 @@ radialType.addEventListener('change', () => {
 const seeCode = document.getElementById('see-code');
 seeCode.addEventListener('click', (event) => {
     event.preventDefault();
-    outputCode.innerHTML = `My width is ${width}px. Border width equals ${userBorderWidth}px, border-radius is ${userBorderRadius}. My angle is ${angle ? angle : 0}deg. Radial shape: circle - ${circle}, ellipse - ${ellipse}. Radial beginning is: ${radialBeginning}`;
+    outputCode.innerHTML = `My width is ${width}px. Border width equals ${userBorderWidth}px, border-radius is ${userBorderRadius}. My angle is ${angle}deg. Radial shape: circle - ${circle}, ellipse - ${ellipse}. Radial beginning is: ${radialBeginning}. Colors: 1 = <span style="color: ${firstColor}">${firstColor}</span>, 2 = <span style="color: ${secondColor}">${secondColor}</span>`;
 })
 
 
