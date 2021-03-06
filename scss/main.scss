@@ -37,6 +37,9 @@ button {
         margin-right: 20px;
     }
 }
+.radius-container {
+    display: flex;
+}
 .angle-handle {
     box-sizing: content-box;
     width: 80px;
@@ -102,7 +105,7 @@ button {
 .output-shape {
     box-sizing: content-box;
     background: black;
-    width: 100px;
+    width: 200px;
     height: 100px;
     border: 0px solid green;
     background: linear-gradient(0deg, #000000 0%, #ffffff 100%);

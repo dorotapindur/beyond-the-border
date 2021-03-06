@@ -16,7 +16,11 @@
             <h2>Describe your element:</h2>
             <form>
                 <label>width of your element: <input class="width" type="number" /> px</label>
-                <label>border-radius: <input class="radius" type="number" /> px</label>
+                <div class="radius-container">
+                    <label>border-radius: <input class="radius" type="number" /></label>
+                    <label><input class="radius-unit" name="border-radius-unit" type="radio" value="px" checked/>px</label>
+                    <label><input class="radius-unit" name="border-radius-unit" type="radio" value="%" />%</label>
+                </div>
                 <label>border width: <input class="border-width" type="number" /> px</label>
                 <label>choose first color: <input class="first-color" type="color" value="#000000" /></label>
                 <label>choose second color: <input class="second-color" type="color" value="#ffffff" /></label>
