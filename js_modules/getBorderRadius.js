@@ -8,9 +8,9 @@ function getBorderRadius() {
     const radioButtons = Array.from(document.querySelectorAll('.radius-unit'));
 
     const setBorderRadius = () => {
-    borderRadiusUnit = radioButtons.find((radio) => radio.checked).value;
-    userBorderRadius = input.value;
-    outputShape.style.borderRadius = `${userBorderRadius}${borderRadiusUnit}`;
+        borderRadiusUnit = radioButtons.find((radio) => radio.checked).value;
+        userBorderRadius = input.value;
+        outputShape.style.borderRadius = `${userBorderRadius}${borderRadiusUnit}`;
     };
 
     input.addEventListener('input', setBorderRadius);

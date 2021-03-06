@@ -1,5 +1,5 @@
 import { outputShape } from '../index.js';
-let userBorderWidth;
+let userBorderWidth = 0;
 
 function getBorderWidth() {
     const borderWidth = document.querySelector('.border-width');
