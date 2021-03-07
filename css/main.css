@@ -94,7 +94,9 @@ button {
   box-sizing: content-box;
   background: black;
   width: 200px;
+  max-width: 400px !important;
   height: 100px;
+  max-height: 400px !important;
   border: 0px solid green;
   background: linear-gradient(0deg, #000000 0%, #ffffff 100%); }
 
