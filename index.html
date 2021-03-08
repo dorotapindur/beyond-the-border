@@ -12,6 +12,21 @@
     <main>
         <h1 class="main-header">Beyond the Border</h1>
         <p>gradient-border generator</p>
+        <section class="image-adjust">
+            <label for="photo">Wczytaj zdjęcie</label>
+            <input id="photo" type="file" name="photo" accept="image/*" />
+            <div class="img">
+                <img id="output" width="300px" />
+            </div>
+            <canvas id="canvas" width="300px" height="300px" style="background-color: #000000"></canvas>
+            <label for="rotate-x">squeeze X: </label>
+            <input id="rotate-x" type="range" value="0" min="0" max="90"/>
+            <p  class="rotate-x-value">0</p>
+            <label for="rotate-y">squeeze Y: </label>
+            <input id="rotate-y" type="range" value="0" min="0" max="90"/>
+            <p  class="rotate-y-value">0</p>
+            <a id="download" download="myImage.jpg" href="" >Download to myImage.jpg</a>
+        </section>
         <section class="section section--inputs">
             <h2>Describe your element:</h2>
             <form>

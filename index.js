@@ -9,6 +9,37 @@ const outputShape = document.getElementById('output-shape');
 
 export {outputShape};
 
+const image = document.getElementById('output');
+const loadFile = function(event) {
+	image.src = URL.createObjectURL(event.target.files[0]);
+    
+};
+document.getElementById('photo').addEventListener('input', loadFile);
+const imgDiv = document.querySelector('.img');
+const rotateXinput = document.getElementById('rotate-x');
+const rotateYinput = document.getElementById('rotate-y');
+const canvas = document.getElementById("canvas");
+function setDegrees() {
+    const radiusX = rotateXinput.value;
+    const radiusY = rotateYinput.value;
+    document.querySelector('.rotate-x-value').innerHTML = radiusX;
+    document.querySelector('.rotate-y-value').innerHTML = radiusY;
+    image.style.transform = `rotate3d(1, 0, 0, ${radiusX}deg) rotate3d(0, 1, 0, ${radiusY}deg)`;
+    canvas.getContext('2d').drawImage(image, 0, 0);
+}
+rotateXinput.addEventListener('change', setDegrees);
+rotateYinput.addEventListener('change', setDegrees);
+
+function downloadImg() {
+    const downloadedImage = canvas.toDataURL("image/jpg");
+    this.href = downloadedImage;
+    console.log('image download');
+  };
+document.getElementById('download').addEventListener('click', downloadImg);
+
+
+
+
 getDimensions();
 getBorderWidth();
 getBorderRadius();
