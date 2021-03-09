@@ -10,25 +10,47 @@ const outputShape = document.getElementById('output-shape');
 export {outputShape};
 
 const image = document.getElementById('output');
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext('2d');
+const canvasSize = 600;
+let canvasImageWidth;
+let canvasImageHeight;
+
+function drawImageOnCanvas() {
+    const startX = (canvasSize - canvasImageWidth)/2;
+    const startY = (canvasSize - canvasImageHeight)/2;
+    ctx.clearRect(0, 0, canvasSize, canvasSize);
+    ctx.beginPath();
+    ctx.drawImage(image, startX, startY, canvasImageWidth, canvasImageHeight);
+}
+
 const loadFile = function(event) {
 	image.src = URL.createObjectURL(event.target.files[0]);
-    
+    image.addEventListener('load', function() {
+        canvasImageWidth = image.width * 2;
+        canvasImageHeight = image.height * 2;
+        drawImageOnCanvas();
+    }) 
 };
 document.getElementById('photo').addEventListener('input', loadFile);
-const imgDiv = document.querySelector('.img');
-const rotateXinput = document.getElementById('rotate-x');
-const rotateYinput = document.getElementById('rotate-y');
-const canvas = document.getElementById("canvas");
+const transformXinput = document.getElementById('transform-x');
+const transformYinput = document.getElementById('transform-y');
+
 function setDegrees() {
-    const radiusX = rotateXinput.value;
-    const radiusY = rotateYinput.value;
-    document.querySelector('.rotate-x-value').innerHTML = radiusX;
-    document.querySelector('.rotate-y-value').innerHTML = radiusY;
-    image.style.transform = `rotate3d(1, 0, 0, ${radiusX}deg) rotate3d(0, 1, 0, ${radiusY}deg)`;
-    canvas.getContext('2d').drawImage(image, 0, 0);
+    const transX = transformXinput.value;
+    const transY = transformYinput.value;
+    let imageWidth = Math.floor(image.width * transX);
+    let imageHeight = Math.floor(image.height * transY);
+    canvasImageWidth = imageWidth * 2;
+    canvasImageHeight = imageHeight * 2;
+    console.log(imageWidth + ' ' + imageHeight);
+    document.querySelector('.transform-x-value').innerHTML = transX;
+    document.querySelector('.transform-y-value').innerHTML = transY;
+    image.style.transform = `scaleX(${transX}) scaleY(${transY})`;
+    drawImageOnCanvas();
 }
-rotateXinput.addEventListener('change', setDegrees);
-rotateYinput.addEventListener('change', setDegrees);
+transformXinput.addEventListener('change', setDegrees);
+transformYinput.addEventListener('change', setDegrees);
 
 function downloadImg() {
     const downloadedImage = canvas.toDataURL("image/jpg");
