@@ -1,37 +1,21 @@
 import { outputShape } from '../index.js';
 import { firstColor, secondColor } from './getColors.js';
-let circle = true;
-let ellipse = false;
+let radialShape = 'circle';
 let radialBeginning = 'center';
-
-function getRadialShape() {
-    const circleInput = document.querySelector('.radial__circle-input');
-    const ellipseInput = document.querySelector('.radial__ellipse-input');
-    circleInput.addEventListener('change', () => {
-        if (circleInput.value === 'on') {
-            circle = true;
-            ellipse = false
-        } else {
-            circle = false;
-            ellipse = true;
-        }
-    });
-    ellipseInput.addEventListener('change', () => {
-        if (ellipseInput.value === 'on') {
-            ellipse = true;
-            circle = false;
-        } else {
-            ellipse = false;
-            circle = true;
-        }
-    });
-
+function outputShapeUpdate() {
+    outputShape.style.background = `radial-gradient(${radialShape} at ${radialBeginning}, ${firstColor} 0%, ${secondColor} 100%)`;
 }
 
 
-
-function getBeginningValue() {
-    outputShape.style.background = `radial-gradient(circle at ${radialBeginning}, ${firstColor} 0%, ${secondColor} 100%)`;
+function getRadialShape() {
+    outputShapeUpdate();
+    const shapeInputList = document.querySelectorAll('.radial__shape-input');
+    for (let i = 0; i< shapeInputList.length; i++) {
+        shapeInputList[i].addEventListener('click', () => {
+            radialShape = shapeInputList[i].value;
+            outputShapeUpdate();     
+        });
+    };
     const inputList = document.querySelectorAll('.radial__input');
     const valueText = document.querySelector('.radial__value--js');
     valueText.textContent = 'center';
@@ -39,10 +23,10 @@ function getBeginningValue() {
         inputList[i].addEventListener('click', () => {
             valueText.textContent = inputList[i].value;
             radialBeginning = inputList[i].value;
-            outputShape.style.background = `radial-gradient(circle at ${radialBeginning}, ${firstColor} 0%, ${secondColor} 100%)`;
+            outputShapeUpdate();
         });
-    }
-};
+    };
+}
 
 
-export { circle, ellipse, radialBeginning, getRadialShape, getBeginningValue };
+export { radialShape, radialBeginning, getRadialShape };

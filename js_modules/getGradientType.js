@@ -1,5 +1,5 @@
 import { getAngle } from "./getAngle.js";
-import { getBeginningValue, getRadialShape } from "./getRadialOptions.js";
+import { getRadialShape } from "./getRadialOptions.js";
 
 let gradientType = 'linear';
 
@@ -22,7 +22,6 @@ function getGradientType() {
             radialBox.classList.remove('invisible');
             linearBox.classList.add('invisible');
             getRadialShape();
-            getBeginningValue();
             gradientType = 'radial';
         }
     });
