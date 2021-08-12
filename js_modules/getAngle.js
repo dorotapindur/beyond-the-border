@@ -3,6 +3,7 @@ import { firstColor, secondColor } from './getColors.js';
 let angle = 0;
 
 function getAngle() {
+    outputShape.style.background = `linear-gradient(${angle}deg, ${firstColor} 0%, ${secondColor} 100%)`;
     const chooseAngle = document.querySelector('.choose-angle--js');
     let angleText = document.querySelector('.angle-handle__text');
     const indicator = document.querySelector('.angle-handle__indicator');
@@ -13,7 +14,7 @@ function getAngle() {
         angle = event.target.value;
         angleText.innerHTML = `${angle}&deg;`;
         indicator.style.transform = `rotate(${angle - 90}deg)`;
-        outputShape.style.background = `linear-gradient(${angle}deg, ${firstColor} 0%, ${secondColor} 100%`;
+        outputShape.style.background = `linear-gradient(${angle}deg, ${firstColor} 0%, ${secondColor} 100%)`;
     };
 };
 

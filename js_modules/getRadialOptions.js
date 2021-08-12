@@ -1,5 +1,8 @@
+import { outputShape } from '../index.js';
+import { firstColor, secondColor } from './getColors.js';
 let circle = true;
 let ellipse = false;
+let radialBeginning = 'center';
 
 function getRadialShape() {
     const circleInput = document.querySelector('.radial__circle-input');
@@ -22,11 +25,13 @@ function getRadialShape() {
             circle = true;
         }
     });
+
 }
 
-let radialBeginning = 'center';
+
 
 function getBeginningValue() {
+    outputShape.style.background = `radial-gradient(circle at ${radialBeginning}, ${firstColor} 0%, ${secondColor} 100%)`;
     const inputList = document.querySelectorAll('.radial__input');
     const valueText = document.querySelector('.radial__value--js');
     valueText.textContent = 'center';
@@ -34,8 +39,10 @@ function getBeginningValue() {
         inputList[i].addEventListener('click', () => {
             valueText.textContent = inputList[i].value;
             radialBeginning = inputList[i].value;
+            outputShape.style.background = `radial-gradient(circle at ${radialBeginning}, ${firstColor} 0%, ${secondColor} 100%)`;
         });
     }
 };
+
 
 export { circle, ellipse, radialBeginning, getRadialShape, getBeginningValue };
